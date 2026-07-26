@@ -43,8 +43,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 LeadDesk Mini is a full-stack, responsive lead capture application featuring dual-layer validation, SSR authentication, and real-time lead pipeline tracking.
 
-- **Live Landing Page:** []
-- **Admin Dashboard:** [YOUR_VERCEL_DEPLOYMENT_URL]/admin
+- **Live Landing Page:** [https://lead-desk-mini-task-b.vercel.app/]
+- **Admin Dashboard:** [https://lead-desk-mini-task-b.vercel.app/]/admin
 - **Test Admin Credentials:**
   - **Email:** `admin@leaddesk.com`
   - **Password:** `adminpass123`
