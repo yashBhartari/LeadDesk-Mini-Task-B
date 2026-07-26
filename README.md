@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## ENV file 
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+
 ## Getting Started
 
 First, run the development server:
@@ -34,3 +38,38 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# LeadDesk Mini — Task A & Task B
+
+LeadDesk Mini is a full-stack, responsive lead capture application featuring dual-layer validation, SSR authentication, and real-time lead pipeline tracking.
+
+- **Live Landing Page:** []
+- **Admin Dashboard:** [YOUR_VERCEL_DEPLOYMENT_URL]/admin
+- **Test Admin Credentials:**
+  - **Email:** `admin@leaddesk.com`
+  - **Password:** `adminpass123`
+
+---
+
+## 🛠️ Architecture & Tech Stack
+
+- **Framework:** Next.js 15 (App Router, Server Actions)
+- **Database:** Supabase PostgreSQL with Row Level Security (RLS)
+- **Auth Strategy:** Supabase SSR Cookie Auth + Next.js Server Middleware protection
+- **Form & Validation:** Zod + React Hook Form (Dual Client-Side and Server-Side Action Validation)
+- **Styling:** Tailwind CSS + `next-themes` (Light/Dark mode)
+
+---
+
+## 📊 Data Model & Database Schema
+
+```sql
+CREATE TABLE leads (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  budget_range TEXT NOT NULL,
+  message TEXT NOT NULL,
+  status TEXT DEFAULT 'New' CHECK (status IN ('New', 'Contacted', 'Closed'))
+);
